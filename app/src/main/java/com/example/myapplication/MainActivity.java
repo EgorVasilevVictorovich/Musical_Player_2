@@ -81,6 +81,8 @@ public class MainActivity extends AppCompatActivity  implements Runnable{
             } else{
                 fabPlayPause.setImageDrawable (ContextCompat.getDrawable (MainActivity.this, android.R.drawable.ic_media_pause));
                 mediaPlayer.start();
+                new Thread(this).start();
+                wasPlaying = false; 
             }
             volumeBar=findViewById(R.id.volumeBar);
             volumeBar.setOnSeekBarChangeListener(
